@@ -1,0 +1,14 @@
+# IDE
+# .vscode
+
+# Config
+config/constants.php
+
+# Images
+images
+
+# Videos
+videos
+
+# Others
+test.php

@@ -1,0 +1,20 @@
+# https://www.youtube.com/watch?v=lRmlDeB7Ovs&t
+
+# config.php
+php_value memory_limit 512M
+php_value upload_max_filesize 256M
+php_value post_max_size 256M
+
+php_value display_errors 1
+
+# Disable the need of file extention in URL
+Options +MultiViews
+
+RewriteEngine On
+RewriteRule upImgs uploadedImages.php
+RewriteRule getImg getImage.php
+
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>
