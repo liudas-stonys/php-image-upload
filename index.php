@@ -24,8 +24,9 @@ require_once "controllers/dbController.php";
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-4 offset-md-4 form-div">
-                <form method="post" enctype="multipart/form-data">
+            <div class="col-6 offset-3 form-div">
+                <!-- multipart/form-data indicates, that we gonna be submitting binary data -->
+                <form action="" method="post" enctype="multipart/form-data">
 
                     <h3 class="text-center">Image Upload</h3>
 
@@ -47,17 +48,16 @@ require_once "controllers/dbController.php";
                     <?php endif; ?>
 
                     <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" name="image" class="form-control">
+                        <input type="file" name="images[]" multiple="" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" name="title" value="<?php if (isset($title)) {
                                                                     echo $title;
                                                                 } ?>" class="form-control">
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                        <button type="submit" name="upload-btn" class="btn btn-primary btn-block">Upload Image</button>
+                        <button type="submit" name="upload-btn" class="btn btn-primary btn-block">Upload</button>
                     </div>
                 </form>
             </div>
