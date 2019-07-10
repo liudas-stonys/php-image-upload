@@ -8,14 +8,9 @@ $imgTmpTitle = "meow.jpg";
 
 // $sql = "SELECT * FROM images WHERE name='calibration.png'";
 
-$sql = "SELECT * FROM images";
+$sql = "SELECT id, name FROM images";
 $result = $conn->query($sql);
-console_log($result);
 $images = $result->fetch_all(MYSQLI_ASSOC);
-
-// $sql = "SELECT id FROM images";
-// $result = $conn->query($sql);
-// $images = $result->fetch_all(MYSQLI_ASSOC);
 
 console_log($images);
 
@@ -54,7 +49,7 @@ if ($conn->close()) {
                         </div>
                     <?php endif;
 
-                if (count($errors)) : ?>
+                    if (count($errors)) : ?>
                         <div class="alert alert-danger">
                             <?php foreach ($errors as $error) : ?>
                                 <li><?php echo $error; ?></li>
@@ -62,7 +57,7 @@ if ($conn->close()) {
                         </div>
                     <?php endif;
 
-                if (count($successes)) : ?>
+                    if (count($successes)) : ?>
                         <div class="alert alert-success">
                             <?php foreach ($successes as $success) : ?>
                                 <li><?php echo $success; ?></li>
