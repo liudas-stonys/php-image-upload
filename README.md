@@ -1,1 +1,2 @@
-"# php-image-upload" 
+# PHP image upload
+Upload and delete multiple images from MySQL DB.
